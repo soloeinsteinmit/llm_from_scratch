@@ -1,4 +1,4 @@
-w# Byte Pair Encoding
+# **Byte Pair Encoding**
 
 ![](images/bpe_l8.png)
 
@@ -30,10 +30,10 @@ w# Byte Pair Encoding
   - the subword splitting helps the model learn that different words with the same root words such as `token` like `tokens` and `tokenizing` are similar in meaning
   - it also helps the model to learn that say `tokenization` and `modernization` are made up of different root words but have the same suffix `ization` and are used in same syntatic situation
 
-## BYPE PAIR ENCODING (BPE)
+## BYTE PAIR ENCODING (BPE)
 
 - this is a subword tokenization algorithms
-- this is a dat compression algorithm
+- this is a data compression algorithm
 - **BPE algorithm(1994)**: most common pair of `consecutive byte` of data `is replaced with a byte` that does not occur in data
 
 - An example from wikipedia
@@ -81,4 +81,5 @@ w# Byte Pair Encoding
 - this list of 11 tokens will serve as our vocabulary.
 - the stopping criteria can either be the `token count` or the `number of iterations`.
 
-<!-- ![](images/bpe_l8_more.png) -->
+**more on tokenization, source: wikipedia**
+![](images/bpe_l8_more.png)
