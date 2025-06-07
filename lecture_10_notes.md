@@ -81,7 +81,7 @@ The **embedding layer** in a model transforms token IDs into dense vectors so th
 - **Token IDs** = symbolic labels → fast, unique, but meaningless alone
 - **Embeddings** = learned vectors → represent **semantic relationships**
 - This is why we don’t just feed token IDs directly into a neural network — the network first **embeds** them into vectors that make language **computable**.
-  ![](images/L10_vec_eg)
+  ![](images/L10_vec_eg.png)
 
 ```python
 # Code for the image above
@@ -163,7 +163,7 @@ Each word (e.g., `"dog"`, `"cat"`, `"apple"`, `"banana"`) is represented as a **
 | makes_sound | 12  | 18  | 0.5   | 0.2    |
 | is_a_pet    | 35  | 31  | 5     | 7      |
 
-🔹 `"dog"` and `"cat"` have **similar vectors** — close in semantic space
+🔹 `"dog"` and `"cat"` have **similar vectors** — close in semantic space <br>
 🔹 `"apple"` and `"banana"` are also close, but very different from `"dog"` or `"cat"`
 
 ---
@@ -188,7 +188,7 @@ Each word (e.g., `"dog"`, `"cat"`, `"apple"`, `"banana"`) is represented as a **
 
 ### **NOW ALL THIS IS GREAT, NOW HOW DO WE MAKE IT SO THAT `DOG/PUPPY`, `CAT/KITTEN`... ARE IN THE SAME AREA IN THE VECTOR SPACE... LET DIVE INTO THAT**
 
-- So we train the neural network for this task
+- So we train a neural network for this task
   ![](images/L10_vec_s6.png)
 - Representing words as vectors, so that the semantic relationship is captured is what we call as `vector` or `token` embeddings
 
@@ -238,6 +238,18 @@ This is the **embedding matrix** used in LLMs like GPT-2:
 4. **📚 Final Embedding Table**
 
    - After training, the embedding table **encodes semantic and syntactic structure of the language**
+
+     > In language, `syntactic structure refers to the grammatical rules that govern how words and phrases are arranged to form sentences, while semantic structure focuses on the meaning of those words and sentences`. Syntax ensures sentences are grammatically correct, whereas semantics concerns the interpretation of meaning. <br>
+
+     > **Syntactic Structure (Syntax):** <br>
+     > This aspect of language deals with the rules of sentence construction, including word order, agreement between words, and the use of various grammatical components like noun phrases, verb phrases, etc. For example, in English, a basic sentence structure is Subject-Verb-Object (SVO). While a sentence might be syntactically correct, it could still be meaningless from a semantic standpoint. <br>
+
+     > **Semantic Structure (Semantics):**<br>
+     > This aspect focuses on the meaning of words and sentences, including how words relate to each other and how sentences convey meaning. It involves understanding the relationships between words, phrases, and the overall message. For instance, "The cat sat on the mat" has a clear semantic meaning because the words and their arrangement convey a specific action and relationship.<br>
+
+     > **Relationship between Syntax and Semantics:** <br>
+     > While they are distinct, syntax and semantics are interconnected. A sentence needs to be syntactically correct to be understood semantically, but a syntactically correct sentence may not always be semantically meaningful. Semantics is also influenced by contextual cues, such as the surrounding words or the situation in which the sentence is used, [according to Study.com](https://study.com/academy/lesson/using-syntactic-semantic-context-clues-to-determine-meaning.html).
+
    - The model can now use these vectors to _"understand"_ and _predict_ tokens more effectively
      > **The `embedding layer` is a lookup operation that retrieves rows from a the embedding later weight using a token ID** > ![](images/L10_vec_s8.png) > **NB: this `embedding layer` is also the same as `neural network linear layer` but the embedi dng layer is used because it is computationally efficient and it scales up when building these large language models, since `torch.nn linear layers` has many uncessary multiplication with zero**
 
