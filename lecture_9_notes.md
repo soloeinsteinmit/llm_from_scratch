@@ -29,4 +29,5 @@
 
 #### **MEANING OF STRIDE**
 
+**NB: Sometimes the `context size` is make to be the same as the `stride size` to `curtail overfitting of the langurage model`**
 ![](images/STRIDE_L9.png)
