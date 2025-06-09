@@ -4,6 +4,7 @@ import tiktoken
 
 class GPTDatasetV1(Dataset):
     def __init__(self, txt, tokenizer, max_length, stride):
+        # the max_length here is the same as the context window / context size
         self.input_ids = []
         self.target_ids = []
         
